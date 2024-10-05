@@ -37,4 +37,4 @@ services:
       - static_volume:/staticfiles/
       - media:/media
     ports:
-      - 9000:80
+      - ${EXTERNAL_PORT}:80
