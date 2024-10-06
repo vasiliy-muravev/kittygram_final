@@ -11,7 +11,7 @@ Kittygram - сервис для любителей котиков.
 Проект интересен тем что полностью настроено "непрерывное развертывание" CI/CD
 [https://github.com/vasiliy-muravev/kittygram_final/actions/runs/11193810761 ](https://github.com/vasiliy-muravev/kittygram_final/actions) - описаны Actions для Workflow 
 В момент  отправки кода в репозиторий (событие git push) запускается цепочка действий по деплою. Обычно эти рутинные действия выполняет разработчик, инструменты для автоматизации решают эту задачу.
-Вот этом файле описаны jobs [https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml](https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml)
+В этом файле описаны jobs [https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml](https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml)
 В момент срабатывания события происходит следующее:
 1. Выполняются тесты по беку
 2. Выполняются тесты по фронту
