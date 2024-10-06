@@ -35,6 +35,6 @@ services:
     env_file: .env
     volumes:
       - static_volume:/staticfiles/
-      - media:/media
+      - media:/app/media
     ports:
       - ${EXTERNAL_PORT}:80
