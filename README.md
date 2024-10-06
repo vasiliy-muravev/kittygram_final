@@ -7,12 +7,28 @@ Kittygram - сервис для любителей котиков.
 - Добавлять новые и присваивать уже существующие достижения. 
 - Просматривать чужих котов и их достижения.
 
+
+Проект интересен тем что полностью настроено "непрерывное развертывание" CI/CD
+[https://github.com/vasiliy-muravev/kittygram_final/actions/runs/11193810761 ](https://github.com/vasiliy-muravev/kittygram_final/actions) - описаны Actions для Workflow 
+В момент  отправки кода в репозиторий (событие git push) запускается цепочка действий по деплою. Обычно эти рутинные действия выполняет разработчик, инструменты для автоматизации решают эту задачу.
+Вот этом файле описаны jobs [https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml](https://github.com/vasiliy-muravev/kittygram_final/blob/main/.github/workflows/main.yml)
+В момент срабатывания события происходит следующее:
+1. Выполняются тесты по беку
+2. Выполняются тесты по фронту
+3. Пересобираются образы для контейнера
+4. Образы отправляются в хранилище dockerhub
+5. Бот заходит на сервер, отправляет команды вытянуть новые образы
+6. Перезапускает все контейнеры
+7. Выполняет миграции и сбор статики
+8. Копирует статику в нужные папки
+9. Отправляет через телеграм бот сообщение об успешном деплое
+
 ## Установка 
 
 1. Клонируйте репозиторий на свой компьютер:
 
     ```bash
-    git clone git@github.com:ShunyaBo/kittygram_final.git
+    git clone git@github.com:vasiliy-muravev/kittygram_final.git
     ```
     ```bash
     cd kittygram
