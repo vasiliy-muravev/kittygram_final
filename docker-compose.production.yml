@@ -19,7 +19,7 @@ services:
       - db
     volumes:
       - static_volume:/backend_static
-      - media:/media
+      - media:/app/media/
 
   frontend:
     image: vasiliymuravev/kittygram_frontend
@@ -35,6 +35,6 @@ services:
     env_file: .env
     volumes:
       - static_volume:/staticfiles/
-      - media:/media
+      - media:/app/media/
     ports:
       - ${EXTERNAL_PORT}:80
